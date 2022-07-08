@@ -32,7 +32,7 @@
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <!-- Favicon  -->
-        <link rel="icon" href="images/favicon.png" />
+        <link rel="icon" href="{{ asset('img/rain.png') }}" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
 
     </head>
@@ -116,8 +116,16 @@
                     <h1 class="font-bold text-gray-300 mb-20">Get Flood Alert on your Mobile phone </h1>
                     <a href="#" class="px-10 py-5 font-bold text-upper rounded-full  bg-orange-600  text-white uppercase">Get Alert  <i class="fas fa-phone-flip pl-2 fa-2x"></i></a>
 
-                    <div class="weather bg-white rounded-full relative top-10 md:mx-80 p-5">
-                       <p>Weather Information Comes here</p>
+                    <div id="weather" class="weather bg-white rounded-lg relative top-10  p-5">
+                        <p class="text-white text-2xl font-bold font-seri my-4">Expect Rain showers Tomorrow...</p>
+                        <form class="cityForm" action="#">
+                            <div class="md:flex md:justify-center">
+                                <i class="fas fa-search fa-2x  top-2 relative left-10"></i>
+                                <input id="city_input" class="md:w-2/4 w-full py-3 pl-2 rounded-full" name="city" type="text">
+                            </div>
+                        </form>
+                        <a class="relative top-10  px-10 py-4 rounded-full bg-gray-700 text-white font-bold text-xl opacity-50 hover:text-white hover:bg-gray-600 mt-4" href="#">See full forcast <i class="fas fa-angle-right"></i></a>
+
                     </div>
             </div>
 
@@ -578,10 +586,10 @@
                 <div class="container px-4 sm:px-8">
 
                     <!-- Counter -->
-                    <div id="counter" class="grid grid-cols-4 gap-2">
+                    <div id="counter" class="grid grid-cols-2 md:grid md:grid-cols-4 gap-2">
                         <div class="">
                             <div class="counter-value number-count text-gray-500" data-count="231">1</div>
-                            <p class="counter-info text-gray-700">Happy Users</p>
+                            <p class="counter-info text-gray-700">Registered Users</p>
                         </div>
                         <div class="">
                             <div class="counter-value number-count text-gray-500" data-count="385">1</div>
@@ -589,16 +597,13 @@
                         </div>
                         <div class="">
                             <div class="counter-value number-count text-gray-500" data-count="159">1</div>
-                            <p class="counter-info text-gray-700">Good Reviews</p>
+                            <p class="counter-info text-gray-700">Notifications Sent</p>
                         </div>
                         <div class="">
                             <div class="counter-value number-count text-gray-500" data-count="127">1</div>
                             <p class="counter-info text-gray-700">Case Studies</p>
                         </div>
-                        <div class="">
-                            <div class="counter-value number-count text-gray-500" data-count="211">1</div>
-                            <p class="counter-info text-gray-700">Orders Received</p>
-                        </div>
+
                     </div>
                     <!-- end of counter -->
 

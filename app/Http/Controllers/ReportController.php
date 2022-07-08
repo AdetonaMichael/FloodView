@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Report;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -14,7 +15,10 @@ class ReportController extends Controller
      */
     public function index()
     {
-        //
+        $image = DB::table('reports')->select('images')->get();
+         $images = explode(',', $image);
+        $reports = Report::all();
+        return view('reports')->with('reports', $reports)->with('images', $images);
     }
 
     /**

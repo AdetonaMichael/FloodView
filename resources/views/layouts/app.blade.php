@@ -15,7 +15,7 @@
                 <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
                 <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
                 <meta name="twitter:card" content="summary_large_image" /> <!-- to have large image post format in Twitter -->
-
+                <link rel="icon" href="{{ asset('img/rain.png') }}" />
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <!-- Styles -->

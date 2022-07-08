@@ -15,11 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Users') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('profile')" :active="request()->routeIs('profile')">
                         {{ __('Profile') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
+                        {{ __('Reports') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -72,11 +72,11 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Users') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('profile')" :active="request()->routeIs('profile')">
                 {{ __('Profile') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
+                {{ __('Reports') }}
             </x-responsive-nav-link>
         </div>
 

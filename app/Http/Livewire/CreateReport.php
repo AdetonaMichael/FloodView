@@ -6,14 +6,18 @@ use LivewireUI\Modal\ModalComponent;
 use Stevebauman\Location\Facades\Location;
 use Livewire\WithFileUploads;
 use App\Models\Report;
+use App\Achievements\CreatedFirstReport;
+use App\Achievements\CreatedReport;
+use Illuminate\Support\Facades\Auth;
 
 class CreateReport extends ModalComponent
 {
     public $clientIP="";
     public $clientLocation = "";
-    public $street, $state, $city, $zipcode, $lga, $loss_of_life, $description, $images;
+    public $street, $state, $city, $zipcode, $lga, $loss_of_life, $description;
+    public $images = [];
     public $other_damages;
-    // use WithFileUploads;
+    use WithFileUploads;
 
 
     public function render()
@@ -30,7 +34,7 @@ class CreateReport extends ModalComponent
         $this->loss_of_life = "";
         $this->other_damages = "";
         $this->description = "";
-        $this->images = "";
+        $this->images = [];
     }
     public function mount(){
         $this->getIP();
@@ -44,8 +48,13 @@ class CreateReport extends ModalComponent
             'zipcode'=>'numeric',
             'loss_of_life'=>'numeric',
             'description'=>'string',
-            // 'images'=>'required|image',
         ]);
+        foreach($this->images as $key=>$image){
+            $this->images[$key] = $image->store('reports');
+        }
+        $this->images = json_encode($this->images);
+        array_push($data, $this->images);
+
 
        Report::create([
            'street'=>$data['street'],
@@ -57,8 +66,12 @@ class CreateReport extends ModalComponent
            'other_damages'=>implode(",",$this->other_damages),
            'loss_of_life'=>$data['loss_of_life'],
            'description'=>$data['description'],
+           'images'=>$this->images,
+
        ]);
 
+       $user = Auth::user();
+       $user->unlock(new CreatedReport());
             // $this->images->store('report_image');
         $this->resetInput();
         session()->flash('success', 'Resport Submitted Successfully...!!');
@@ -72,7 +85,7 @@ class CreateReport extends ModalComponent
         return '4xl';
     }
     public function getIP(){
-        $currentUserInfo = Location::get('102.89.40.176');
+         $currentUserInfo = Location::get('102.89.40.176');
          $this->clientLocation = $currentUserInfo->latitude.",". $currentUserInfo->longitude;
         //  session()->put('ipaddress',$theIP);
 

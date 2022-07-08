@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\CreateReport;
+use App\Http\Livewire\Profile;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -21,18 +22,14 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes(['verify'=>true]);
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth','verified'])->name('dashboard');
 
-Route::get('reports', function(){
-    return view('reports');
-})->middleware(['auth','verified']);
+Route::middleware(['auth', 'verified'])->group(function (){
+    Route::get('/dashboard', [UserController::class,'index'])->name('dashboard');
+    Route::get('/reports', [ReportController::class, 'index'])->name('reports');
+    Route::get('/profile', function(){return view('profile');})->name('profile');
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-    Route::get('filemanager', [FileManagerController::class, 'index']);
 });
+
 
 Route::get('userindex', [UserController::class, 'index']);
 Route::get('storeReport',[CreateReport::class, 'storeReport'])->name('create-report');

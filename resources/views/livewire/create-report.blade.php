@@ -93,7 +93,7 @@
         </x-slot>
     {{-- </form> --}}
     </x-modal>
-{{-- 
+{{--
     <script src="https://cdn.tiny.cloud/1/914cbs1n4e1r1683f7ere86yes0kemwesp1tctsdsft2pq6k/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
             tinymce.init({
@@ -108,7 +108,6 @@
   tags: true
 });
     </script> --}}
-
 
 
 </div>

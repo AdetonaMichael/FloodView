@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Report;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 
 class UserController extends Controller
 {
     public function index(){
-        /* Dynamic IP Address */
-        // $ip_address = session('ipaddress');
-        // $currentUserInfo = Location::get($ip_address);
-        $currentUserInfo = Location::get('66.85.47.62');
-        dd($currentUserInfo);
-        // return view('detail', compact('currentUserInfo'));
-
+        $users = User::all();
+        $reports = Report::all();
+    return view('dashboard')->with('users', $users)->with('reports', $reports);
     }
 }

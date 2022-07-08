@@ -15,4 +15,20 @@ header.masthead{
         top:300px;
     }
 }
+@media (min-width:760px){
+    .weather{
+        height:300px;
+        margin-left: 40%;
+    }
+}
+
+    .weather{
+        height:300px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+#weather{
+    background:url('../img/rain_bg.jpg');
+}
+
 

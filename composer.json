@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "assada/laravel-achievements": "^2.4",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/breeze": "^1.9",
         "laravel/framework": "^9.11",
@@ -14,7 +15,6 @@
         "laravel/ui": "^3.4",
         "livewire/livewire": "^2.10",
         "stevebauman/location": "^6.5",
-        "unisharp/laravel-filemanager": "^2.5",
         "wire-elements/modal": "^1.0"
     },
     "require-dev": {

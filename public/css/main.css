@@ -15,6 +15,11 @@ header.masthead{
         top:300px;
     }
 }
+@media(max-width:780px){
+    #hero-title{
+        font-size:26px;
+    }
+}
 @media (min-width:760px){
     .weather{
         height:300px;

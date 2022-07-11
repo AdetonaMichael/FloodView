@@ -31,7 +31,7 @@ Route::middleware(['auth', 'verified'])->group(function (){
 
 });
 Route::get('/email-new', [HomeController::class, 'sendMail']);
-// Route::get('/email-new', [HomeController::class, 'build']);
+// Route::get('/email-new', [NewFloodReport::class, 'build']);
 
 Route::get('userindex', [UserController::class, 'index']);
 Route::get('storeReport',[CreateReport::class, 'storeReport'])->name('create-report');

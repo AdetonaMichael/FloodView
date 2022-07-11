@@ -135,7 +135,7 @@
                                     </td>
                                     <td valign="middle"
                                         style="padding:10px 0; text-align:right; line-height:1.1; font-family: sans-serif; font-size: 13px; color: #999999;">
-                                        A mobile-friendly template with no media queries.
+                                         Flood View & Notification Reporting System By Alex Tosin
                                     </td>
                                 </tr>
                             </table>

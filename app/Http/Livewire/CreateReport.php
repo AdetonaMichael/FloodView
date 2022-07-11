@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Classes\MyMailClass;
 use LivewireUI\Modal\ModalComponent;
 use Stevebauman\Location\Facades\Location;
 use Livewire\WithFileUploads;
@@ -55,7 +56,7 @@ class CreateReport extends ModalComponent
         array_push($data, $this->images);
 
 
-       Report::create([
+       $details = Report::create([
            'street'=>$data['street'],
            'state'=>$data['state'],
            'location'=>$this->clientLocation,
@@ -66,16 +67,15 @@ class CreateReport extends ModalComponent
            'loss_of_life'=>$data['loss_of_life'],
            'description'=>$data['description'],
            'images'=>$this->images,
-        //    'user_id'=>auth()->user()->id,
+           'user_id'=>auth()->user()->id,
 
        ]);
 
 
             // $this->images->store('report_image');
         $this->resetInput();
-        session()->flash('success', 'Resport Submitted Successfully...!!');
-
-    //    Report::create($data);
+        $caller = new MyMailClass();
+        $caller->sendMail($details);
 
     }
 

@@ -17,8 +17,7 @@
                             style="text-align:center; padding:4% 0; font-family:sans-serif; font-size:13px; line-height:1.2; color:#666666;">
                             You received this email because you opted in to our newsletter.
                             <br><br>
-                            Company Name &bull; <span class="mobile-link--footer">23 Fake Street, SpringField, Oregon
-                                97477 US</span> &bull; <span class="mobile-link--footer">(123) 456-7890</span>
+                            Obafemi Awolowo University &bull; <span class="mobile-link--footer">Road 1</span> &bull; <span class="mobile-link--footer">(+234) 3820-323</span>
                             <br><br>
                             <unsubscribe style="color:#666666; text-decoration:underline;">unsubscribe</unsubscribe>
                         </td>

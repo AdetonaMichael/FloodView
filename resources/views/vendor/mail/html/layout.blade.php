@@ -81,7 +81,7 @@ width: 100% !important;
                 <br/><br/>
 
             </td>
-            <table cellspacing="0" cellpadding="0" border="0" align="center"
+            {{-- <table cellspacing="0" cellpadding="0" border="0" align="center"
             class="button" style="margin: auto;">
             <tr>
                 <td style="border-radius: 3px; background: #222222; text-align: center;">
@@ -94,13 +94,13 @@ width: 100% !important;
                     </a>
                 </td>
             </tr>
-        </table>
+        </table> --}}
         </tr>
         <!-- Full Width, Fluid Column : END -->
 
 
 
-        <!-- Data Table : BEGIN -->
+        {{-- <!-- Data Table : BEGIN -->
         <tr style="background-color: white;">
             <td style="padding: 4%;">
                 <table cellspacing="0" cellpadding="0" border="0" width="100%" style="">
@@ -163,7 +163,7 @@ width: 100% !important;
                 </table>
             </td>
         </tr>
-        <!-- Data Table : END -->
+        <!-- Data Table : END --> --}}
 
     </table>
     <!-- Main Email Body : END -->

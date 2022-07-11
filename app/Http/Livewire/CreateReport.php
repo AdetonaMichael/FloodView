@@ -6,9 +6,8 @@ use LivewireUI\Modal\ModalComponent;
 use Stevebauman\Location\Facades\Location;
 use Livewire\WithFileUploads;
 use App\Models\Report;
-use App\Achievements\CreatedFirstReport;
-use App\Achievements\CreatedReport;
 use Illuminate\Support\Facades\Auth;
+
 
 class CreateReport extends ModalComponent
 {
@@ -67,11 +66,11 @@ class CreateReport extends ModalComponent
            'loss_of_life'=>$data['loss_of_life'],
            'description'=>$data['description'],
            'images'=>$this->images,
+        //    'user_id'=>auth()->user()->id,
 
        ]);
 
-       $user = Auth::user();
-       $user->unlock(new CreatedReport());
+
             // $this->images->store('report_image');
         $this->resetInput();
         session()->flash('success', 'Resport Submitted Successfully...!!');
@@ -79,6 +78,7 @@ class CreateReport extends ModalComponent
     //    Report::create($data);
 
     }
+
     public static function modalMaxWidth(): string
     {
         // 'sm'// 'md'// 'lg'// 'xl'// '2xl'// '3xl'// '4xl'// '5xl'// '6xl'// '7xl'

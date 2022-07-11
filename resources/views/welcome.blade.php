@@ -112,9 +112,9 @@
         <!-- end of header -->
         <header class="masthead">
             <div id="hero-caption" class="row text-center">
+                <a href="#" class="px-10 py-5 font-bold text-upper rounded-full  bg-orange-600  text-white uppercase ">Get Alert  <i class="fas fa-phone-flip pl-2 fa-2x"></i></a>
+                    <h1 class="font-bold text-gray-300 mb-10 mt-10">Get Flood Alert on your Mobile phone </h1>
 
-                    <h1 class="font-bold text-gray-300 mb-20">Get Flood Alert on your Mobile phone </h1>
-                    <a href="#" class="px-10 py-5 font-bold text-upper rounded-full  bg-orange-600  text-white uppercase">Get Alert  <i class="fas fa-phone-flip pl-2 fa-2x"></i></a>
 
                     <div id="weather" class="weather bg-white rounded-lg relative top-10  p-5">
                         <p class="text-white text-2xl font-bold font-seri my-4">Expect Rain showers Tomorrow...</p>

@@ -7,18 +7,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Assada\Achievements\Achiever;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, Achiever;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = ['name','firstname','lastname','phone','profpix','occupation','about','language','email','password',];
+    protected $fillable = ['name','firstname','lastname','phone','profpix','occupation','about','language','email','password'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -38,4 +38,8 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function report(){
+        return $this->hasMany(Report::class);
+    }
 }

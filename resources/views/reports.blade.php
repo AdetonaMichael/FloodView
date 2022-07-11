@@ -40,7 +40,7 @@
                     </li>
                     <li class="flex">
                         <i class="fas fa-chevron-right"></i>
-                        <div class="text-xl"><span class="text-red-600">Posted By:</span> {{auth()->user()->name;}}</div>
+                        <div class="text-xl"><span class="text-red-600">Posted By:</span> {{  }}</div>
                     </li>
                 </ul>
                 <a class="btn-solid-reg popup-with-move-anim mr-1.5" href="#details-lightbox">Contribute</a>

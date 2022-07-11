@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('city');
             $table->string('zipcode')->nullable();
             $table->string('lga');
+            $table->integer('user_id');
             $table->string('loss_of_life');
             $table->string('other_damages');
             $table->string('description')->nullable();

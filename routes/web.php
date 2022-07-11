@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Livewire\CreateReport;
 use App\Http\Livewire\Profile;
+use App\Mail\NewFloodReport;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -29,7 +30,8 @@ Route::middleware(['auth', 'verified'])->group(function (){
     Route::get('/profile', function(){return view('profile');})->name('profile');
 
 });
-
+Route::get('/email-new', [HomeController::class, 'sendMail']);
+// Route::get('/email-new', [HomeController::class, 'build']);
 
 Route::get('userindex', [UserController::class, 'index']);
 Route::get('storeReport',[CreateReport::class, 'storeReport'])->name('create-report');

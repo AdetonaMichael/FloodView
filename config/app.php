@@ -197,7 +197,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
-        Assada\Achievements\AchievementsServiceProvider::class,
 
     ],
 

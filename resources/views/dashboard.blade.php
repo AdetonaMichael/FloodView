@@ -184,7 +184,7 @@
         </thead>
         <tbody>
             @foreach ($reports as $report)
-            @if($reportu->id%2 == 0)
+            @if($report->id%2 == 0)
             <tr class="bg-gray-100 border-b-2 border-b-gray-300">
                 <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $report->location }}</td>
                 <td class="p-3 text-sm text-gray-700 whitespace-nowrap">{{ $report->street }}</td>

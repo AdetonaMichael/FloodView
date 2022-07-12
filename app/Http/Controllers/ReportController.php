@@ -15,10 +15,13 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $image = DB::table('reports')->select('images')->get();
-         $images = explode(',', $image);
+        // $image = DB::table('reports')->select('images')->get();
+        //  $images = explode(',', $image);
         $reports = Report::all();
-        return view('reports')->with('reports', $reports)->with('images', $images);
+        return view('reports')->with('reports', $reports);
+
+
+
     }
 
     /**

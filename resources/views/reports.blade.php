@@ -12,14 +12,6 @@
             <div class="mb-12 lg:mb-0 xl:mr-14">
                 <img class="inline" src="images/details-2.jpg" alt="alternative" />
             </div>
-
-            <div class="flex">
-                @foreach ($images as $item)
-                <img src="storage/{{($item)}}" alt="image" />
-            @endforeach
-            </div>
-
-
         </div> <!-- end of col -->
         <div class="lg:col-span-5">
             <div class="xl:mt-12">
